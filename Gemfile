@@ -79,3 +79,7 @@ group :development do
   gem "htmlbeautifier", require: false
 end
 
+
+gem "devise", "~> 4.9"
+gem "devise-i18n"
+gem "devise-bootstrap5"

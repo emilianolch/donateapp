@@ -1,0 +1,39 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+AllCops:
+  UseCache: true
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - db/schema.rb
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+Layout/LineLength:
+  Exclude:
+    - spec/**/*
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 8
+RSpec/ExampleLength:
+  Max: 15
+Lint/MissingSuper:
+  Exclude:
+    - "app/components/**/*"
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
