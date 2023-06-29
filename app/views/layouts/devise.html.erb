@@ -11,11 +11,15 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
     <%= render "shared/flash" %>
 
-    <main class="container-fluid">
-      <%= yield %>
-    </main>
+    <div class="card m-sm-5">
+      <div class="card-header">
+        <span class="h5">DonateApp</span>
+      </div>
+      <div class="card-body">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
