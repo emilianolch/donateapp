@@ -87,7 +87,8 @@ class PaymentsController < ApplicationController
     donation.update!(
       total_paid_amount: payment["transaction_amount"],
       net_received_amount: payment["transaction_details"]["net_received_amount"],
-      data: payment,
+      payment_status: payment["status"],
+      payment_data: payment,
     )
   end
 end

@@ -7,7 +7,8 @@ class CreateDonations < ActiveRecord::Migration[7.0]
       t.string :uuid
       t.float :total_paid_amount, null: false, default: 0.0
       t.float :net_received_amount, null: false, default: 0.0
-      t.json :data
+      t.integer :payment_status, null: false, default: 0
+      t.json :payment_data
 
       t.timestamps
     end
