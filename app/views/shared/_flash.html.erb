@@ -1,5 +1,7 @@
 <% flash.each do |flash_type, message| %>
-  <div class="alert <%= flash_class(flash_type) %> alert-dismissible fade show py-1" role="alert">
+  <div class="alert <%= flash_class(flash_type) %> alert-dismissible fade show py-1" 
+    data-turbo-temporary="true"
+    role="alert">
     <%= message %>
     <button type="button" class="btn-close py-2" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>

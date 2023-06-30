@@ -5,5 +5,12 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  resources :payments
+  resources :payments do
+    collection do
+      get :success
+      get :failure
+      get :pending
+      post :notification
+    end
+  end
 end

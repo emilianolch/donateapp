@@ -83,3 +83,4 @@ end
 gem "devise", "~> 4.9"
 gem "devise-i18n"
 gem "devise-bootstrap5"
+gem "mercadopago-sdk", "~> 2.1"
