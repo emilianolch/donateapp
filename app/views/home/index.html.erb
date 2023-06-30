@@ -1,1 +1,10 @@
-<h1>My donations</h1>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t(".title") %></h5>
+    <p class="card-text"><%= t(".app_description") %></p>
+    <%= button_to payments_path, class: "btn btn-primary d-flex gap-2 align-items-center" do %>
+      <i class="fa fa-heart"></i>
+      <span><%= t(".donate") %></span>
+    <% end %>
+  </div>
+</div>
