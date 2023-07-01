@@ -43,4 +43,8 @@ class Donation < ApplicationRecord
   validates :payment_status, presence: true
 
   scope :committed, -> { where.not(payment_status: :not_committed) }
+
+  def committed?
+    payment_status != "not_committed"
+  end
 end

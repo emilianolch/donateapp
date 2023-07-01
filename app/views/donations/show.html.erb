@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mb-3">
   <div class="card-body">
     <h5 class="card-title"><%= t(".donation_details") %></h5>
 
@@ -36,3 +36,15 @@
     </table>
   </div>
 </div>
+
+<% if @donation.committed? %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= t(".payment_details") %></h5>
+      <p><%= t(".payment_details_description") %></p>
+      <pre>
+<%= JSON.pretty_generate(@donation.payment_data.as_json) %>
+      </pre>
+    </div>
+  </div>
+<% end %>

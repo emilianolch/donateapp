@@ -7,3 +7,5 @@ es:
       confirm_delete: ¿Deseas eliminar esta donación?
     show:
       donation_details: Datos de la donación
+      payment_details: Datos del pago
+      payment_details_description: Estos datos son proporcionados por la pasarela de pago.
