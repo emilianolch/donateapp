@@ -2,6 +2,8 @@ es:
   donations:
     index:
       donations: Donaciones
-      details: Ver detalles
+      details: Más información
       delete: Eliminar
       confirm_delete: ¿Deseas eliminar esta donación?
+    show:
+      donation_details: Datos de la donación
