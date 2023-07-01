@@ -73,7 +73,7 @@ RSpec.describe "Payments", type: :request do
       sign_out user
     end
 
-    let!(:donation) { create(:donation, user: user) }
+    let(:donation) { create(:donation, user: user) }
     let(:params) do
       {
         type: "payment",

@@ -37,5 +37,7 @@ module Donateapp
     config.generators.system_tests = nil
 
     config.i18n.default_locale = :es
+
+    config.time_zone = "America/Argentina/Buenos_Aires"
   end
 end

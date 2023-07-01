@@ -8,6 +8,8 @@ RSpec.describe "Home", type: :request do
   before { sign_in user }
 
   describe "index" do
+    before { create_list(:donation, 3, user: user, payment_status: :approved) }
+
     it "renders a successful response" do
       get root_path
       expect(response).to be_successful

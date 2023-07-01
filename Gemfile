@@ -91,3 +91,5 @@ gem "devise-bootstrap5"
 gem "mercadopago-sdk", "~> 2.1"
 
 gem "dotenv-rails", "~> 2.8"
+
+gem "human_attribute_values", "~> 1.2"

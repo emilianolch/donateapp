@@ -33,4 +33,8 @@ RSpec.describe Donation do
   describe "enums" do
     it { is_expected.to define_enum_for(:payment_status) }
   end
+
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:uuid) }
+  end
 end

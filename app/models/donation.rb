@@ -38,4 +38,8 @@ class Donation < ApplicationRecord
     refunded: 8,
     charged_back: 9,
   }
+
+  validates :uuid, presence: true
+
+  scope :committed, -> { where.not(payment_status: :not_committed) }
 end

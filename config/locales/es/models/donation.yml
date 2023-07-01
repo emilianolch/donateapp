@@ -1,0 +1,22 @@
+es:
+  activerecord:
+    models:
+      donation: Donación
+    attributes:
+      donation:
+        created_at: Fecha y hora
+        total_paid_amount: Monto
+        payment_status: Estado del pago
+    values:
+      donation:
+        payment_status:
+          not_committed: No realizado
+          approved: Aprobado
+          rejected: Rechazado
+          refunded: Reintegrado
+          in_process: En proceso
+          charged_back: Devuelto
+          cancelled: Cancelado
+          pending: Pendiente
+          authorized: Autorizado
+          in_mediation: En mediación
