@@ -1,0 +1,14 @@
+<%= search_form_for @q, class: "d-flex align-items-end gap-2 mb-3" do |f| %>
+  <div class="mb-3">
+    <%= f.label :created_at_gteq, t(".from"), class: "form-label" %>
+    <%= f.date_field :created_at_gteq, class: "form-control form-control-sm w-auto" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :created_at_lteq, t(".to"), class: "form-label" %>
+    <%= f.date_field :created_at_lteq, class: "form-control form-control-sm w-auto" %>
+  </div>
+  <div class="form-actions mb-3">
+    <%= f.submit class: "btn btn-primary btn-sm" %>
+    <%= clear_filter title: t(".clear_filter"), class: "btn btn-outline-primary btn-sm" %>
+  </div>
+<% end %>

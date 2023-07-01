@@ -5,6 +5,10 @@ es:
       details: Más información
       delete: Eliminar
       confirm_delete: ¿Deseas eliminar esta donación?
+    search_form:
+      from: Desde
+      to: Hasta
+      clear_filter: Limpiar filtros
     show:
       donation_details: Datos de la donación
       payment_details: Datos del pago

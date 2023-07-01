@@ -50,6 +50,10 @@ class Donation < ApplicationRecord
     def status_collection
       payment_statuses.keys.map { |s| [human_attribute_value(:payment_status, s), s] }
     end
+
+    def ransackable_attributes(auth_object = nil)
+      ["created_at"]
+    end
   end
 
   def committed?

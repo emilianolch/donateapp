@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class DonationsController < ApplicationController
+  include RansackMemory::Concern
+
   before_action :authenticate_admin!
   before_action :set_donation, only: [:show, :update, :destroy]
+  before_action :save_and_load_filters, only: [:index]
 
   def index
-    @donations = Donation.all.preload(:user)
+    @q = Donation.ransack(params[:q])
+    @donations = @q.result.preload(:user)
 
     respond_to do |format|
       format.html
