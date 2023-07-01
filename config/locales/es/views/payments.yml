@@ -2,3 +2,5 @@ es:
   payments:
     item_title: "Donación"
     success: "¡Gracias por tu donación!"
+    pending: "Tu donación está pendiente de pago. Te avisaremos cuando se confirme."
+    failure: "Tu donación no se ha podido procesar."
