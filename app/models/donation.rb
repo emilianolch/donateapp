@@ -44,6 +44,10 @@ class Donation < ApplicationRecord
 
   scope :committed, -> { where.not(payment_status: :not_committed) }
 
+  ransacker :created_at do
+    Arel.sql("date(created_at at time zone 'UTC' at time zone '#{Time.zone.name}')")
+  end
+
   after_commit :send_payment_confirmation, on: :update, if: [:saved_change_to_payment_status?, :approved?]
 
   class << self
