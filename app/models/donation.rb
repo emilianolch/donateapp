@@ -44,6 +44,12 @@ class Donation < ApplicationRecord
 
   scope :committed, -> { where.not(payment_status: :not_committed) }
 
+  class << self
+    def status_collection
+      payment_statuses.keys.map { |s| [human_attribute_value(:payment_status, s), s] }
+    end
+  end
+
   def committed?
     payment_status != "not_committed"
   end

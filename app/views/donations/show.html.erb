@@ -2,43 +2,52 @@
   <div class="card-body">
     <h5 class="card-title"><%= t(".donation_details") %></h5>
 
-    <table class="table table-sm">
-      <tbody>
-        <tr>
-          <th><%= Donation.human_attribute_name(:uuid) %></th>
-          <td><%= @donation.uuid %></td>
-        </tr>
-        <tr>
-          <th><%= Donation.human_attribute_name(:created_at) %></th>
-          <td><%= l(@donation.created_at) %></td>
-        </tr>
-        <tr>
-          <th><%= Donation.human_attribute_name(:user) %></th>
-          <td><%= @donation.user.email %></td>
-        </tr>
-        <tr>
-          <th><%= Donation.human_attribute_name(:total_paid_amount) %></th>
-          <td><%= number_to_currency(@donation.total_paid_amount, precision: 0) %></td>
-        </tr>
-        <tr>
-          <th><%= Donation.human_attribute_name(:net_received_amount) %></th>
-          <td><%= number_to_currency(@donation.net_received_amount) %></td>
-        </tr>
-        <tr>
-          <th><%= Donation.human_attribute_name(:payment_status) %></th>
-          <td><%= @donation.human_attribute_value(:payment_status) %></td>
-        </tr>
-        <tr>
-          <th><%= Donation.human_attribute_name(:updated_at) %></th>
-          <td><%= l(@donation.updated_at) %></td>
-        </tr>
-      </tbody>
-    </table>
+    <%= form_with model: @donation do |f| %>
+      <table class="table table-sm">
+        <tbody>
+          <tr>
+            <th><%= Donation.human_attribute_name(:uuid) %></th>
+            <td><%= @donation.uuid %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:created_at) %></th>
+            <td><%= l(@donation.created_at) %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:user) %></th>
+            <td><%= @donation.user.email %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:total_paid_amount) %></th>
+            <td><%= number_to_currency(@donation.total_paid_amount, precision: 0) %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:net_received_amount) %></th>
+            <td><%= number_to_currency(@donation.net_received_amount) %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:updated_at) %></th>
+            <td><%= l(@donation.updated_at) %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:payment_status) %></th>
+            <td>
+              <%= f.select :payment_status, Donation.status_collection, {}, class: "form-select form-select-sm w-auto" %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="form-actions">
+        <%= f.submit class: "btn btn-primary btn-sm" %>
+        <%= link_to t("common.back"), donations_path, class: "btn btn-outline-secondary btn-sm" %>
+      </div>
+    <% end %>
   </div>
 </div>
 
 <% if @donation.committed? %>
-  <div class="card">
+  <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title"><%= t(".payment_details") %></h5>
       <p><%= t(".payment_details_description") %></p>
