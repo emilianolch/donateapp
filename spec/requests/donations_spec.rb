@@ -31,6 +31,13 @@ RSpec.describe "Donations", type: :request do
         expect(response).to redirect_to(root_path)
       end
     end
+
+    describe "destroy" do
+      it "redirects to root path" do
+        delete donation_path(donation)
+        expect(response).to redirect_to(root_path)
+      end
+    end
   end
 
   context "when user is admin" do
@@ -76,6 +83,21 @@ RSpec.describe "Donations", type: :request do
           patch donation_path(donation), params: { donation: new_attributes }
           expect(response).to be_unprocessable
         end
+      end
+    end
+
+    describe "destroy" do
+      let!(:donation) { create(:donation, user: donator) }
+
+      it "destroys the requested donation" do
+        expect do
+          delete donation_path(donation)
+        end.to change(Donation, :count).by(-1)
+      end
+
+      it "redirects to the donations list" do
+        delete donation_path(donation)
+        expect(response).to redirect_to(donations_path)
       end
     end
   end

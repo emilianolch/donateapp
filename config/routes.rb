@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :donations, only: [:index, :show, :update]
+  resources :donations, only: [:index, :show, :update, :destroy]
 end

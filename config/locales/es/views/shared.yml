@@ -1,4 +1,5 @@
 es:
   shared:
     navbar:
+      admin: Administración
       exit: Salir

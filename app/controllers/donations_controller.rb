@@ -2,7 +2,7 @@
 
 class DonationsController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_donation, only: [:show, :update]
+  before_action :set_donation, only: [:show, :update, :destroy]
 
   def index
     @donations = Donation.all.preload(:user)
@@ -19,10 +19,26 @@ class DonationsController < ApplicationController
   end
 
   def update
-    if @donation.update(donation_params)
-      redirect_to @donation, notice: t("messages.donation_updated")
-    else
-      render :show, status: :unprocessable_entity
+    respond_to do |format|
+      format.html do
+        if @donation.update(donation_params)
+          redirect_to @donation, notice: t("messages.donation_updated")
+        else
+          render :show, status: :unprocessable_entity
+        end
+      end
+    end
+  end
+
+  def destroy
+    respond_to do |format|
+      format.html do
+        if @donation.destroy
+          redirect_to donations_url, notice: t("messages.donation_destroyed")
+        else
+          head :unprocessable_entity
+        end
+      end
     end
   end
 

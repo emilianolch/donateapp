@@ -4,6 +4,7 @@ es:
       donation: Donación
     attributes:
       donation:
+        user: Usuario
         created_at: Creada
         updated_at: Actualizada
         uuid: Identificador

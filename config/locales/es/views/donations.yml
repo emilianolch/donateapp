@@ -1,0 +1,7 @@
+es:
+  donations:
+    index:
+      donations: Donaciones
+      details: Ver detalles
+      delete: Eliminar
+      confirm_delete: ¿Deseas eliminar esta donación?
