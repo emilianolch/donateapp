@@ -1,6 +1,26 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons";
 
+// Hide my_donations card if there are no donations
 div#my_donations:not(:has(table tbody tr)) {
   display: none;
+}
+
+table#donations {
+  // Hide table if there are no donations
+  &:not(:has(tbody tr)) {
+    thead {
+      display: none;
+    }
+    tbody {
+      display: none;
+    }
+  }
+
+  // Hide empty_message if there are donations
+  &:has(tbody tr) {
+    caption {
+      display: none;
+    }
+  }
 }

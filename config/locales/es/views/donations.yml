@@ -2,6 +2,7 @@ es:
   donations:
     index:
       donations: Donaciones
+      no_donations: No se han encontrado donaciones
     donation:
       details: Más información
       delete: Eliminar
