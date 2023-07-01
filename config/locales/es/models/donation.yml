@@ -12,6 +12,8 @@ es:
         net_received_amount: Monto neto recibido
         payment_status: Estado del pago
         payment_data: Datos del pago
+        user_agent: User agent
+        remote_ip: Dirección IP
     values:
       donation:
         payment_status:

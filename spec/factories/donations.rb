@@ -8,7 +8,9 @@
 #  net_received_amount :float            default(0.0), not null
 #  payment_data        :json
 #  payment_status      :integer          default("not_committed"), not null
+#  remote_ip           :string
 #  total_paid_amount   :float            default(0.0), not null
+#  user_agent          :string
 #  uuid                :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
@@ -27,5 +29,7 @@ FactoryBot.define do
   factory :donation do
     user
     uuid { SecureRandom.uuid }
+    user_agent { Faker::Internet.user_agent }
+    remote_ip { Faker::Internet.ip_v4_address }
   end
 end

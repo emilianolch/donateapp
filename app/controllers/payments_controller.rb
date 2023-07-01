@@ -35,7 +35,11 @@ class PaymentsController < ApplicationController
     }
 
     preference = @sdk.preference.create(preference_data)[:response]
-    current_user.donations.create!(uuid: preference["external_reference"])
+    current_user.donations.create!(
+      uuid: preference["external_reference"],
+      user_agent: request.user_agent,
+      remote_ip: request.remote_ip,
+    )
 
     redirect_to preference["init_point"], allow_other_host: true
   end

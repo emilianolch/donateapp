@@ -10,6 +10,14 @@
             <td><%= @donation.uuid %></td>
           </tr>
           <tr>
+            <th><%= Donation.human_attribute_name(:user_agent) %></th>
+            <td><%= @donation.user_agent %></td>
+          </tr>
+          <tr>
+            <th><%= Donation.human_attribute_name(:remote_ip) %></th>
+            <td><%= @donation.remote_ip %></td>
+          </tr>
+          <tr>
             <th><%= Donation.human_attribute_name(:created_at) %></th>
             <td><%= l(@donation.created_at) %></td>
           </tr>
