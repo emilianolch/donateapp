@@ -4,7 +4,7 @@
 
     <%= render "search_form" %>
 
-    <table class="table table-sm">
+    <table id="donations" class="table table-sm">
       <thead>
         <tr>
           <th><%= Donation.human_attribute_name(:created_at) %></th>
@@ -18,21 +18,7 @@
       </thead>
 
       <tbody>
-        <% @donations.each do |donation| %>
-          <tr id="<%= dom_id(donation) %>">
-            <td class="align-middle"><%= l(donation.created_at) %></td>
-            <td class="align-middle"><%= donation.user.email %></td>
-            <td class="align-middle"><%= number_to_currency(donation.total_paid_amount, precision: 0) %></td>
-            <td class="align-middle"><%= number_to_currency(donation.net_received_amount) %></td>
-            <td class="align-middle"><%= donation.human_attribute_value(:payment_status) %></td>
-            <td class="align-middle"><%= l(donation.updated_at) %></td>
-            <td class="d-flex flex-nowrap">
-              <%= link_to t(".details"), donation_path(donation), class: "btn btn-link btn-sm" %>
-              <%= button_to t(".delete"), donation_path(donation), method: :delete,
-                    class: "btn btn-link btn-sm", "data-turbo-confirm": t(".confirm_delete") %>
-            </td>
-          </tr>
-        <% end %>
+        <%= render @donations %>
       </tbody>
     </table>
   </div>

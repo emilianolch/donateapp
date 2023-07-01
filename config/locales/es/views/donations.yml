@@ -2,6 +2,7 @@ es:
   donations:
     index:
       donations: Donaciones
+    donation:
       details: Más información
       delete: Eliminar
       confirm_delete: ¿Deseas eliminar esta donación?
