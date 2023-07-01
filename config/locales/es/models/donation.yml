@@ -4,9 +4,13 @@ es:
       donation: Donación
     attributes:
       donation:
-        created_at: Fecha y hora
+        created_at: Creada
+        updated_at: Actualizada
+        uuid: Identificador
         total_paid_amount: Monto
+        net_received_amount: Monto neto recibido
         payment_status: Estado del pago
+        payment_data: Datos del pago
     values:
       donation:
         payment_status:

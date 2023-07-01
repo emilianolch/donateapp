@@ -9,7 +9,7 @@ Things you may want to cover:
 
 - `npm install`
 
-- Ruby version
+- `rails db:setup`
 
 - System dependencies
 

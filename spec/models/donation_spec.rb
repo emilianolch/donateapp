@@ -35,6 +35,7 @@ RSpec.describe Donation do
   end
 
   describe "validations" do
+    it { is_expected.to validate_presence_of(:payment_status) }
     it { is_expected.to validate_presence_of(:uuid) }
   end
 end

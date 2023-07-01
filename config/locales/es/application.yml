@@ -1,0 +1,4 @@
+es:
+  messages:
+    not_authorized: "No tienes permiso para acceder a esa página."
+    donation_updated: "Donación actualizada."

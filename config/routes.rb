@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  resources :payments do
+  resources :payments, only: :create do
     collection do
       get :success
       get :failure
@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       post :notification
     end
   end
+
+  resources :donations, only: [:index, :show, :update]
 end

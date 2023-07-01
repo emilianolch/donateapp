@@ -40,6 +40,7 @@ class Donation < ApplicationRecord
   }
 
   validates :uuid, presence: true
+  validates :payment_status, presence: true
 
   scope :committed, -> { where.not(payment_status: :not_committed) }
 end
