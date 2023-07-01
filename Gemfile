@@ -69,6 +69,7 @@ group :development do
 
   gem "annotate", "~> 3.2"
   gem "bullet"
+  gem "letter_opener"
 
   # linting
   gem "rubocop", require: false
@@ -84,12 +85,9 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
 end
 
-
 gem "devise", "~> 4.9"
 gem "devise-i18n"
 gem "devise-bootstrap5"
 gem "mercadopago-sdk", "~> 2.1"
-
 gem "dotenv-rails", "~> 2.8"
-
 gem "human_attribute_values", "~> 1.2"

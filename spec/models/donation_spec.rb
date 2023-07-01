@@ -38,4 +38,14 @@ RSpec.describe Donation do
     it { is_expected.to validate_presence_of(:payment_status) }
     it { is_expected.to validate_presence_of(:uuid) }
   end
+
+  describe "payment notification" do
+    let(:donation) { create(:donation) }
+
+    it "sends a payment confirmation email" do
+      expect do
+        donation.update!(payment_status: :approved)
+      end.to have_enqueued_mail(UserMailer, :payment_confirmation)
+    end
+  end
 end

@@ -1,0 +1,5 @@
+es:
+  user_mailer:
+    payment_confirmation:
+      subject: "Confirmación de donación"
+      thanks: "Hola, ¡muchas gracias por tu pequeño gran aporte! Tu pago ha sido registrado."

@@ -44,6 +44,8 @@ class Donation < ApplicationRecord
 
   scope :committed, -> { where.not(payment_status: :not_committed) }
 
+  after_commit :send_payment_confirmation, on: :update, if: [:saved_change_to_payment_status?, :approved?]
+
   class << self
     def status_collection
       payment_statuses.keys.map { |s| [human_attribute_value(:payment_status, s), s] }
@@ -52,5 +54,13 @@ class Donation < ApplicationRecord
 
   def committed?
     payment_status != "not_committed"
+  end
+
+  def approved?
+    payment_status == "approved"
+  end
+
+  def send_payment_confirmation
+    UserMailer.with(donation: self).payment_confirmation.deliver_later
   end
 end

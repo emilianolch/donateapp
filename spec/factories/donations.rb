@@ -25,7 +25,7 @@
 #
 FactoryBot.define do
   factory :donation do
-    user { nil }
+    user
     uuid { SecureRandom.uuid }
   end
 end
