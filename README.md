@@ -62,7 +62,8 @@ Once ngrok is running, you will see a public URL in the console. Open that URL i
 ## Live demo
 
 The main branch is automatically deployed to Heroku. You can access the app at https://donate.emiliano.cloudns.nz/
-You can use the default admin user to access the admin panel.
+
+Use the default admin user to access the admin panel.
 
 ## TODO
 
