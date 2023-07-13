@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe UserMailer, type: :mailer do
+RSpec.describe UserMailer do
   let(:donation) { create(:donation) }
   let(:mail) { described_class.with(donation: donation).payment_confirmation }
 

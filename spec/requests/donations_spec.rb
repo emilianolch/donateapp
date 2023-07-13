@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Donations", type: :request do
+RSpec.describe "Donations" do
   let(:donator) { create(:user) }
   let(:donation) { create(:donation, user: donator) }
 

@@ -1,6 +1,7 @@
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-factory_bot
 inherit_gem:
   rubocop-shopify: rubocop.yml
 AllCops:

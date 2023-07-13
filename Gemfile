@@ -76,6 +76,7 @@ group :development do
   gem "rubocop-shopify", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+  gem "rubocop-factory_bot", require: false
   gem "erb_lint", require: false
 
   gem "htmlbeautifier", require: false

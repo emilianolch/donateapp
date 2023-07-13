@@ -3,7 +3,7 @@
 require "rails_helper"
 require "mercadopago"
 
-RSpec.describe "Payments", type: :request do
+RSpec.describe "Payments" do
   let(:user) { create(:user) }
 
   before { sign_in user }
