@@ -58,13 +58,3 @@ ngrok http 3000
 ```
 
 Once ngrok is running, you will see a public URL in the console. Open that URL in your bowser to access the app. Don't access the app using `localhost:3000` because MercadoPago won't be able to send notifications to your local server.
-
-## Live demo
-
-The main branch is automatically deployed to Heroku. You can access the app at https://donate.emiliano.cloudns.nz/
-
-Use the default admin user to access the admin panel.
-
-## TODO
-
-- Setup a mailer addon in Heroku to send emails in production.
